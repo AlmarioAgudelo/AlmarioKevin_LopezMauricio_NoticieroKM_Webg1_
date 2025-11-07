@@ -151,6 +151,11 @@ button {
     color: #334174;
     text-align: center;
 }
+.titulo-noticiasf {
+    font-size: 1.6rem;
+    color: #334174;
+    text-align: center;
+}
 
 .mensaje-vacio {
     color: #8f3b3b;

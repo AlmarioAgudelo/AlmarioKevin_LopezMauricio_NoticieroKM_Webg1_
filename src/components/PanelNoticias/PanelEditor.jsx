@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { db } from "../../firebaseConfig";
-import { collection, getDocs, updateDoc, doc, serverTimestamp } from "firebase/firestore";
+import { collection, getDocs, updateDoc, doc, serverTimestamp, onSnapshot  } from "firebase/firestore";
 import { useAuth } from "../../Context/AuthContext";
 import CardNoticia from "../CardNotice/CardNoticia";
 import PanelSecciones from "../PanelSecciones/PanelSecciones";
@@ -11,13 +11,13 @@ const PanelEditor = () => {
     const [secciones, setSecciones] = useState([]);
 
     useEffect(() => {
-        const fetchNoticias = async () => {
-            const snapshot = await getDocs(collection(db, "noticias"));
+        const unsubscribe = onSnapshot(collection(db, "noticias"), (snapshot) => {
             const lista = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
             setNoticias(lista);
-        };
-        fetchNoticias();
+        });
+        return () => unsubscribe();
     }, []);
+
 
     useEffect(() => {
         const fetchSecciones = async () => {
@@ -64,6 +64,7 @@ const PanelEditor = () => {
     return (
 
         <>
+            <h3 className="titulo-noticiasf">EDITOR</h3>
             <h3 className="titulo-noticias">Gestión de Noticias</h3>
             {estados.map((estado) => (
                 <div key={estado} className="bloque-estado">
@@ -82,11 +83,11 @@ const PanelEditor = () => {
                                         editarNoticia={editarNoticia}
                                         cambiarEstado={cambiarEstado}
                                     />
-                                    
+
                                 );
-                                
+
                             })}
-                            
+
                     </div>
                 </div>
             ))}

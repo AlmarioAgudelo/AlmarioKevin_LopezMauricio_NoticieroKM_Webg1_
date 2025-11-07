@@ -12,6 +12,7 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const [isLoading, setIsLoading] = useState(false); // ← nuevo estado
 
     useEffect(() => {
         if (!loading && user) navigate("/panel");
@@ -20,8 +21,10 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         setError("");
+        setIsLoading(true); // ← inicio carga
         try {
             await signInWithEmailAndPassword(auth, email, password);
+            // Redirección se maneja en useEffect
         } catch (err) {
             console.error("Error al iniciar sesión:", err);
             if (err.code === "auth/invalid-email") setError("Correo no válido");
@@ -29,6 +32,7 @@ const Login = () => {
             else if (err.code === "auth/wrong-password") setError("Contraseña incorrecta");
             else setError("Error al iniciar sesión");
         }
+        setIsLoading(false); // ← fin carga
     };
 
     return (
@@ -60,7 +64,9 @@ const Login = () => {
                         />
                     </div>
 
-                    <button type="submit" className="btn-login">Entrar</button>
+                    <button type="submit" className="btn-login" disabled={isLoading}>
+                        {isLoading ? <span className="spinner"></span> : "Entrar"}
+                    </button>
 
                     {error && <p className="error-message">{error}</p>}
                 </form>

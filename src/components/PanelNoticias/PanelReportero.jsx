@@ -193,6 +193,7 @@ const PanelReportero = () => {
 
     return (
         <>
+            <h3 className="titulo-noticias">REPORTERO</h3>
             <div className="crear-noticia">
                 <h3>Crear Nueva Noticia</h3>
                 <form onSubmit={handleCrearNoticia}>
@@ -214,7 +215,7 @@ const PanelReportero = () => {
                 </form>
             </div>
 
-            <h3 className="titulo-noticias">Mis Noticias</h3>
+            <h3 className="titulo-noticias">Mis Noticias </h3>
             {estados.map((estado) => (
                 <div key={estado} className="bloque-estado">
                     <h4 className="estado-titulo">{estado}</h4>

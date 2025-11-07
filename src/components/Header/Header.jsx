@@ -6,7 +6,7 @@ import { useAuth } from "../../Context/AuthContext";
 import "./Header.css";
 
 function Header() {
-	const { user, loading } = useAuth();
+	const { user, loading, rol } = useAuth();
 	const navigate = useNavigate();
 
 	const handleLogout = async () => {
@@ -14,7 +14,7 @@ function Header() {
 		navigate("/login");
 	};
 
-	if (loading) return null; 
+	if (loading) return null;
 
 	return (
 		<header className="site-header" role="banner" aria-label="Encabezado principal">
@@ -25,7 +25,11 @@ function Header() {
 				<nav className="header-nav">
 					{user ? (
 						<>
-							<span className="user-email">{user.email}</span>
+							<span className="user-email">
+								{rol === "reportero" ? "Reportero" : "Editor"} {user.email}
+							</span>
+
+
 							<Link to="/panel" className="manage-btn">
 								Gestionar
 							</Link>
