@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
-import "./NavbarCategorias.css";
+import "./NavBarCategorias.css";
 
 const NavbarCategorias = ({ onSeleccionCategoria }) => {
     const [categorias, setCategorias] = useState([]);
