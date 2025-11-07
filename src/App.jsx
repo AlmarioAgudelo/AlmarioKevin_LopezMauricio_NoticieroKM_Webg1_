@@ -7,10 +7,11 @@ import PanelSecciones from "./components/PanelSecciones/PanelSecciones.jsx";
 import Main from "./components/Main/Main.jsx"
 import Header from "./components/Header/Header.jsx"
 import Footer from "./components/Footer/Footer.jsx"
-import NoticiaDetalle from "./Components/NoticiaDetalle/NoticiaDetalle"; 
+import NoticiaDetalle from "./components/NoticiaDetalle/NoticiaDetalle"; 
 import "./App.css"
 
 
+//
 // NOMBRES DEL EQUIPO DE TRABAJO
 
 
