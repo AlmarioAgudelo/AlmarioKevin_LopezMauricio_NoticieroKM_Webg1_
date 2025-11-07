@@ -1,0 +1,110 @@
+.register-page {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.register-card {
+    background: white;
+    padding: 50px 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+.register-card h2 {
+    margin-bottom: 10px;
+    color: #1e1e2f;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #6b73ff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(107, 115, 255, 0.4);
+}
+
+button {
+    padding: 12px;
+    background: #6b73ff;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #000dff;
+    transform: translateY(-2px);
+}
+
+.error {
+    color: #ff3b3b;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.login-link {
+    margin-top: 25px;
+    color: #444;
+    font-size: 15px;
+}
+
+.login-link a {
+    color: #6b73ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+    .register-card {
+        width: 90%;
+        padding: 40px 25px;
+    }
+}

@@ -1,0 +1,38 @@
+.navbar-categorias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.btn-categoria,
+.btn-todas {
+    background-color: #334155;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 18px;
+}
+
+.btn-categoria:hover,
+.btn-todas:hover {
+    background-color: #475569;
+}
+
+.btn-todas {
+    background-color: #0ea5e9;
+}
+
+.btn-todas:hover {
+    background-color: #0284c7;
+}

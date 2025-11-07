@@ -1,0 +1,119 @@
+/*
+ * NewsCard.css
+ * Estilos para el componente NewsCard
+ */
+
+/* Contenedor principal */
+.news-card {
+  /* Tamaño base y apariencia */
+  width: 100%;
+  max-width: 350px; /* Ajusta según el diseño general de tu página */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de la imagen (la parte principal) */
+.news-card__image-container {
+  /* Establece la altura y el uso del fondo */
+  height: 250px; /* Ajusta la altura de la imagen */
+  background-position: center;
+  background-size: cover;
+  display: flex; /* Para posicionar el overlay en la parte inferior */
+  align-items: flex-end; /* Alinea el contenido interno (overlay) abajo */
+  position: relative;
+}
+
+/* Overlay de texto (Degradado oscuro en la parte inferior) */
+.news-card__overlay {
+  width: 100%;
+  padding: 15px;
+  /* Degradado sutil de negro a transparente en la parte superior del overlay */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  color: #fff; /* Texto blanco sobre el degradado oscuro */
+}
+
+/* Metadatos (Fuente/Fecha) */
+.news-card__metadata {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.news-card__source-icon {
+  background-color: #e3001e; /* Color rojo de ejemplo para el icono/fuente */
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.news-card__date {
+  font-weight: 500;
+}
+
+
+/* Título de la noticia */
+.news-card__title {
+  font-size: 1.25rem; /* Ajusta el tamaño del título */
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Interacciones (Likes) */
+.news-card__interactions {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.news-card__like-count {
+  margin-right: 10px;
+}
+
+/* Contenido inferior (Descripción y Leer más) - Se oculta el overflow para no afectar el diseño principal */
+.news-card__body {
+  padding: 15px;
+  border-top: 1px solid #eee; /* Separador sutil */
+}
+
+.news-card__description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  /* Limita la descripción a 3 líneas */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Enlace "Leer más" */
+.news-card__read-more {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.news-card__read-more:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}

@@ -1,0 +1,42 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.titulo-principal {
+  color: #000000;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.news-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px;
+}
+
+.news-grid>* {
+  flex: 1 1 320px;
+  max-width: 360px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.mensaje-carga {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+  padding: 3rem 0;
+  background-color: transparent;
+}
